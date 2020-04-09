@@ -22,7 +22,7 @@ function love.load()
     ['hearts'] = love.graphics.newImage('assets/sprites/hearts.png'),
     ['particle'] = love.graphics.newImage('assets/sprites/particle.png')
   }
-  
+
   push:setupScreen(VIRTUAL_WIDTH, VIRTUAL_HEIGHT, WINDOW_WIDTH, WINDOW_HEIGHT, {
     vsync = true,
     fullscreen = false,
@@ -30,20 +30,20 @@ function love.load()
   })
 
   gSounds = {
-    ['paddle-hit'] = love.audio.newSource('assets/sounds/paddle_hit.wav'),
-    ['score'] = love.audio.newSource('assets/sounds/score.wav'),
-    ['wall-hit'] = love.audio.newSource('assets/sounds/wall_hit.wav'),
-    ['confirm']  = love.audio.newSource('assets/sounds/confirm.wav'),
-    ['select']  = love.audio.newSource('assets/sounds/select.wav'),
-    ['no-select'] = love.audio.newSource('assets/sounds/no-select.wav'),
-    ['brick-hit-1'] = love.audio.newSource('assets/sounds/brick-hit-1.wav'),
-    ['brick-hit-2'] = love.audio.newSource('assets/sounds/brick-hit-2.wav'),
-    ['hurt'] = love.audio.newSource('assets/sounds/hurt.wav'),
-    ['victory'] = love.audio.newSource('assets/sounds/victory.wav'),
-    ['recover'] = love.audio.newSource('assets/sounds/recover.wav'),
-    ['high-score'] = love.audio.newSource('assets/sounds/high_score.wav'),
-    ['pause'] = love.audio.newSource('assets/sounds/pause.wav'),
-    ['music'] = love.audio.newSource('assets/sounds/music.wav')
+    ['paddle-hit'] = love.audio.newSource('assets/sounds/paddle_hit.wav', 'static'),
+    ['score'] = love.audio.newSource('assets/sounds/score.wav', 'static'),
+    ['wall-hit'] = love.audio.newSource('assets/sounds/wall_hit.wav', 'static'),
+    ['confirm']  = love.audio.newSource('assets/sounds/confirm.wav', 'static'),
+    ['select']  = love.audio.newSource('assets/sounds/select.wav', 'static'),
+    ['no-select'] = love.audio.newSource('assets/sounds/no-select.wav', 'static'),
+    ['brick-hit-1'] = love.audio.newSource('assets/sounds/brick-hit-1.wav', 'static'),
+    ['brick-hit-2'] = love.audio.newSource('assets/sounds/brick-hit-2.wav', 'static'),
+    ['hurt'] = love.audio.newSource('assets/sounds/hurt.wav', 'static'),
+    ['victory'] = love.audio.newSource('assets/sounds/victory.wav', 'static'),
+    ['recover'] = love.audio.newSource('assets/sounds/recover.wav', 'static'),
+    ['high-score'] = love.audio.newSource('assets/sounds/high_score.wav', 'static'),
+    ['pause'] = love.audio.newSource('assets/sounds/pause.wav', 'static'),
+    ['music'] = love.audio.newSource('assets/sounds/music.wav', 'static')
   }
 
   gStateMachine = StateMachine {
@@ -97,6 +97,6 @@ end
 
 function displayFPS()
   love.graphics.setFont(gFonts['small'])
-  love.graphics.setColot(0, 1, 0, 1)
+  love.graphics.setColor(0, 1, 0, 1)
   love.graphics.print('FPS: ' .. tostring(love.timer.getFPS()), 5, 5)
 end
