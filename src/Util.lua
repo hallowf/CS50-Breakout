@@ -73,7 +73,7 @@ function GenerateQuadsBalls(atlas)
   local quads = {}
 
   for i = 0, 3 do
-    quads[counter] = love.graphics.newQuad(x, y, 8, 8, atlas::getDimensions())
+    quads[counter] = love.graphics.newQuad(x, y, 8, 8, atlas:getDimensions())
     x = x + 8
     counter = counter + 1
   end
@@ -83,10 +83,14 @@ function GenerateQuadsBalls(atlas)
 
   for i = 0, 2 do
     quads[counter] = love.graphics.newQuad(x, y, 8, 8, atlas:getDimensions())
-    x * x + 8
+    x = x + 8
     counter = counter + 1
   end
 
   return quads
+end
+
+function GenerateQuadsBricks(atlas)
+  return table.slice(GenerateQuads(atlas, 32, 16), 1, 21)
 end
 

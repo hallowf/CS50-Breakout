@@ -12,11 +12,11 @@ end
 
 function Ball:collides(target)
 
-  if self.x > target.y + target.width or target.x > self.z + self.width then
+  if self.x > target.x + target.width or target.x > self.x + self.width then
     return false
   end
 
-  if self.y >target.y + target.height or target.y > self.y  + self.height then
+  if self.y > target.y + target.height or target.y > self.y  + self.height then
     return false
   end
 
