@@ -53,6 +53,8 @@ function love.load()
     ['music'] = love.audio.newSource('assets/sounds/music.wav', 'static')
   }
 
+  lowerSoundsVolume()
+
   gStateMachine = StateMachine {
     ['start'] = function() return StartState() end,
     ['play'] = function() return PlayState() end,
@@ -123,6 +125,12 @@ function love.draw()
   displayFPS()
 
   push:apply('end')
+end
+
+function lowerSoundsVolume()
+  for _, sound in pairs(gSounds) do
+    sound:setVolume(0.2)
+  end
 end
 
 function displayFPS()
